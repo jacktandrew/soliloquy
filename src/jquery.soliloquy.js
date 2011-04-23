@@ -154,7 +154,8 @@
   // # Post builders
   function buildTwitterPost(post, settings){
     var html = "<div class='twitter post'>";
-    html += "<span class='screen-name'>" + "<img src=" + post.user['profile_image_url'] + "> " + post.user['screen_name'] + "</span> ";
+    html += '<a href="' + "http://twitter.com/" + post.user['screen_name'] + '" ' + ' target="_blank"' +  ' class="thumbnail"><img src="' + post.user['profile_image_url'] + '" alt="' + post.user + '" /></a>';
+    html += '<a href="' + "http://twitter.com/" + post.user['screen_name'] + '" ' + ' target="_blank"' +  ' class="screen-name">' + post.user['screen_name'] + "</a> ";
     html += processPost(post.text);
     
     var values = post.created_at.split(" ");
